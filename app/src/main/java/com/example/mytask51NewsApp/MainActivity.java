@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         newsRecyclerViewAdapter = new newsRecyclerViewAdapter(newsList, this);
         recyclerView.setAdapter(newsRecyclerViewAdapter);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         for (int i = 0; i < headlineList.length; i++) {
             News news = new News(i, headlineList[i], contentList[i]);
