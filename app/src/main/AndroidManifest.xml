@@ -15,7 +15,7 @@
         android:theme="@style/Theme.MyTask51_News_App"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.mytask51NewsApp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

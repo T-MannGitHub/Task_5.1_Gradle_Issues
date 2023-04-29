@@ -1,6 +1,5 @@
 package com.example.mytask51NewsApp;
 
-//import static com.example.mytask51NewsApp.R.id.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -18,13 +17,10 @@ import java.util.List;
 
 
 
-
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     newsRecyclerViewAdapter newsRecyclerViewAdapter;
     List<News> newsList = new ArrayList<>();
-    //ImageButton buttonStory1, buttonStory2;
-
 
     String[] headlineList = {"Crocs Go WILD", "Footy's Back!", "Temperature Plummets", "Rush on Light 'n Tangy", "NT voted tourist mecca", "Croc nets banned to save community"};
     String[] contentList = {"Salty numbers out of control, as CLP leader Lia Finocchiaro calls for a cull.", "Footy is back in the NT with 4 games at TIO and Alice stadiums this season.", "Get out your socks and jumpers as temperature is forecast to dip below 23 degrees C.", "Lays announces discontinuation of public favourite Light 'n Tangy, causing a rush to stores from punters hoping to secure some supplies.", "Global surveys reveal Australia's Northern Territory at the top of the bucket list for international travellers over 55", "Controversial decision to ban installation of croc nets at NT beaches, in order to prevent tourist flood and overdevelopment of protected waterfront reserves in Darwin"};
@@ -47,11 +43,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //@SuppressLint("NonConstantResourceId")
     public void selectFragment(View view) {
         Fragment fragment;
-        //if (buttonStory1) {
-        //}
+
 
         switch (view.getId())
         {
