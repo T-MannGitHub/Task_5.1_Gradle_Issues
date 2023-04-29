@@ -1,14 +1,17 @@
 package com.example.mytask51NewsApp;
 
-public class News {
+public class TopStories {
 
     private String headline, content;
+    private int newsImage;
     private int id;
 
-    public News(int id, String headline, String content) {
+    public TopStories(int id, String headline, int newsImage) {
         this.id = id;
         this.headline = headline;
-        this.content = content;
+        this.newsImage = newsImage;
+
+        //this.content = content;
     }
 
     public int getId() {
@@ -17,6 +20,14 @@ public class News {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getNewsImage() {
+        return newsImage;
+    }
+
+    public void setNewsImage(int newsImage) {
+        this.newsImage = newsImage;
     }
 
     public String getHeadline() {

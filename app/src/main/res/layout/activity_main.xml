@@ -7,62 +7,73 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewNews"
+        android:id="@+id/recyclerViewTopStories"
         android:layout_width="391dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="18dp"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonStoryOne"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <ImageButton
-        android:id="@+id/buttonStoryOne"
-        android:layout_width="165dp"
-        android:layout_height="97dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="432dp"
-        android:background="@drawable/story_1_croc"
-        android:onClick="selectFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonStoryTwo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewNews"
-        tools:srcCompat="@drawable/story_1_croc" />
-
-    <ImageButton
-        android:id="@+id/buttonStoryTwo"
-        android:layout_width="165dp"
-        android:layout_height="97dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="432dp"
-        android:background="@drawable/story_2_footy"
-        android:onClick="selectFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewNews"
-        app:layout_constraintVertical_bias="1.0"
-        tools:srcCompat="@drawable/story_2_footy" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.example.mytask51NewsApp.story1Fragment"
-        android:layout_width="391dp"
-        android:layout_height="412dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="9dp"
+        android:layout_width="390dp"
+        android:layout_height="288dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="11dp"
-        android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="2dp"
+        android:background="#FFFFFF"
+        android:foregroundGravity="bottom"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewNews"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStoryOne" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/myTextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="13dp"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/Title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewTopStories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/myTextViewNews"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/News"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewNews"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewTopStories" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNews"
+        android:layout_width="0dp"
+        android:layout_height="406dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
