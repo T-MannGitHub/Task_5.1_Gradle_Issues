@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardLayoutNews"
+        android:layout_width="141dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="#45A099AE"
+        app:cardCornerRadius="@dimen/cardview_compat_inset_shadow"
+        app:contentPadding="0dp"
+        app:contentPaddingBottom="0dp"
+        app:contentPaddingLeft="0dp"
+        app:contentPaddingRight="0dp"
+        app:contentPaddingTop="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSubHeading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewNews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:scaleType="fitXY"
+            android:onClick="selectFragment"
+            app:srcCompat="@drawable/story_1_croc" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textViewSubHeading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="6dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewNewsContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardLayoutNews"
+        />
+
+    <TextView
+        android:id="@+id/textViewNewsContent"
+        android:layout_width="0dp"
+        android:layout_height="132dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="19dp"
+        android:justificationMode="inter_word"
+        android:text="TextView"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSubHeading" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

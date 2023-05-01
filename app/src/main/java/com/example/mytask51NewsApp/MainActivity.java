@@ -1,6 +1,7 @@
 package com.example.mytask51NewsApp;
 
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     String[] contentList = {"Salty numbers out of control, as CLP leader Lia Finocchiaro calls for a cull.", "Footy is back in the NT with 4 games at TIO and Alice stadiums this season.", "Get out your socks and jumpers as temperature is forecast to dip below 23 degrees C.", "Thins announces discontinuation of cult favourite Light 'n Tangy, causing a rush to stores from punters hoping to secure supplies.", "Global surveys reveal Australia's Northern Territory at the top of the bucket list for international travellers over 55", "Controversial decision to ban installation of croc nets at NT beaches, in order to prevent tourist flood and overdevelopment of protected waterfront reserves in Darwin"};
 
     String[] subHeadingList = {"Croc Country", "Footy NT", "Cold Snap", "Light n' Tangy", "Tourism HotSpot", "No Nets!"};
-    int[] newsImage = {R.drawable.story_1_croc, R.drawable.story_2_footy, R.drawable.story_3_socks, R.drawable.story_4_chips,
+    int[] newsImage = {R.drawable.story_1_croc, R.drawable.story_2_footy, R.drawable.story_3_socks, R.drawable.story_4_chips_,
     R.drawable.story_5_tourists, R.drawable.story_6_nets};
 
 
@@ -64,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void selectFragment(ImageView imageView) {
+
+    public void selectFragment(View imageView) {
         Fragment fragment;
         try {
-
             switch (imageView.getId()) {
                 case R.drawable.story_1_croc:
                     fragment = new story1Fragment();
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 default:
-                    throw new IllegalStateException("Unexpected value: " + imageView.getId());
+                    throw new IllegalStateException("Unexpected value.");
             }
 
             FragmentManager fragmentManager = getSupportFragmentManager();
