@@ -23,7 +23,7 @@ import java.util.List;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements newsRecyclerViewAdapter.OnRowClickListener{
     RecyclerView recyclerViewTopStories, recyclerViewNews;
     com.example.mytask51NewsApp.topStoriesRecyclerViewAdapter topStoriesRecyclerViewAdapter;
     com.example.mytask51NewsApp.newsRecyclerViewAdapter newsRecyclerViewAdapter;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
 
         topStoriesRecyclerViewAdapter = new topStoriesRecyclerViewAdapter(topStoriesList, this);
-        newsRecyclerViewAdapter = new newsRecyclerViewAdapter(newsList, this);
+        newsRecyclerViewAdapter = new newsRecyclerViewAdapter(newsList, this, this);
 
         recyclerViewTopStories.setAdapter(topStoriesRecyclerViewAdapter);
         recyclerViewNews.setAdapter(newsRecyclerViewAdapter);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new story2Fragment();
                     break;
                 case R.drawable.story_3_socks:
-                    fragment = new story1Fragment();
+                    fragment = new story3Fragment();
                     break;
                 case R.drawable.story_4_chips:
                     fragment = new story2Fragment();
@@ -100,5 +100,41 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception e){
             Toast.makeText(MainActivity.this, "Error in go to fragment section", Toast.LENGTH_SHORT).show();}
 
+    }
+
+    @Override
+    public void onItemCLick(int position) {
+        Fragment fragment;
+       try {
+        switch (position) {
+            case 0:
+                fragment = new story1Fragment();
+                break;
+            case 1:
+                fragment = new story2Fragment();
+                break;
+            case 2:
+                fragment = new story3Fragment();
+                break;
+            case 3:
+                fragment = new story1Fragment();
+                break;
+            case 4:
+                fragment = new story2Fragment();
+                break;
+            case 5:
+                fragment = new story3Fragment();
+                break;
+
+            default:
+                throw new IllegalStateException("Unexpected value.");
+
+        }
+           FragmentManager fragmentManager = getSupportFragmentManager();
+           FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+           fragmentTransaction.replace(R.id.fragmentContainerView, fragment).commit();
+       }
+        catch (Exception e){
+            Toast.makeText(MainActivity.this, "Error in go to fragment section", Toast.LENGTH_SHORT).show();}
     }
 }

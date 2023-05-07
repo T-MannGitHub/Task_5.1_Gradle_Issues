@@ -35,7 +35,7 @@
             android:paddingRight="5dp"
             android:paddingBottom="5dp"
             android:scaleType="fitXY"
-            android:onClick="selectFragment"
+
             app:srcCompat="@drawable/story_1_croc" />
 
     </androidx.cardview.widget.CardView>
