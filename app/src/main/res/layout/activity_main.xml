@@ -7,6 +7,7 @@
     tools:context="com.example.mytask51NewsApp.MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
@@ -14,12 +15,18 @@
         tools:layout_editor_absoluteX="-29dp"
         tools:layout_editor_absoluteY="52dp">
 
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.mytask51_news_app.mainFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/myTextViewNews"
             android:layout_width="367dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="1dp"
             android:text="@string/News"
             android:textSize="28sp"
@@ -30,7 +37,7 @@
             android:layout_width="386dp"
             android:layout_height="170dp"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="18dp">
 
         </androidx.recyclerview.widget.RecyclerView>
@@ -40,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="105dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="106dp"
             android:layout_marginBottom="1dp"
             android:foregroundGravity="center_horizontal"
@@ -51,23 +58,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewNews"
-            android:layout_width="379dp"
-            android:layout_height="178dp"
+            android:layout_width="391dp"
+            android:layout_height="315dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="18dp">
 
         </androidx.recyclerview.widget.RecyclerView>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
-            android:name="com.example.mytask51NewsApp.story1Fragment"
-            android:layout_width="390dp"
-            android:layout_height="276dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="11dp"
-            android:background="#FFFFFF"
-            android:foregroundGravity="bottom"
-            android:visibility="visible" />
 
     </LinearLayout>
 

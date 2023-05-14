@@ -18,6 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mytask51_news_app.R;
+import com.example.mytask51_news_app.story4Fragment;
+import com.example.mytask51_news_app.story5Fragment;
+import com.example.mytask51_news_app.story6Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,26 +31,29 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
     RecyclerView recyclerViewTopStories, recyclerViewNews;
     com.example.mytask51NewsApp.topStoriesRecyclerViewAdapter topStoriesRecyclerViewAdapter;
     com.example.mytask51NewsApp.newsRecyclerViewAdapter newsRecyclerViewAdapter;
+
     List<TopStories> topStoriesList = new ArrayList<>();
     List<News> newsList = new ArrayList<>();
+
     FragmentContainerView fragmentContainer;
 
     String[] headlineList = {"Crocs Go WILD", "Footy's Back!", "Temperature Plummets", "Rush on Light 'n Tangy", "NT voted tourist mecca", "Croc nets banned to save community"};
     String[] contentList = {"Salty numbers out of control, as CLP leader Lia Finocchiaro calls for a cull.", "Footy is back in the NT with 4 games at TIO and Alice stadiums this season.", "Get out your socks and jumpers as temperature is forecast to dip below 23 degrees C.", "Thins announces discontinuation of cult favourite Light 'n Tangy, causing a rush to stores from punters hoping to secure supplies.", "Global surveys reveal Australia's Northern Territory at the top of the bucket list for international travellers over 55", "Controversial decision to ban installation of croc nets at NT beaches, in order to prevent tourist flood and overdevelopment of protected waterfront reserves in Darwin"};
 
     String[] subHeadingList = {"Croc Country", "Footy NT", "Cold Snap", "Light n' Tangy", "Tourism HotSpot", "No Nets!"};
+
     int[] newsImage = {R.drawable.story_1_croc, R.drawable.story_2_footy, R.drawable.story_3_socks, R.drawable.story_4_chips_,
     R.drawable.story_5_tourists, R.drawable.story_6_nets};
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerViewTopStories = findViewById(R.id.recyclerViewTopStories);
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
-        fragmentContainer = findViewById(R.id.fragmentContainerView);
 
+        fragmentContainer = findViewById(R.id.fragmentContainerView);
 
         topStoriesRecyclerViewAdapter = new topStoriesRecyclerViewAdapter(topStoriesList, this);
         newsRecyclerViewAdapter = new newsRecyclerViewAdapter(newsList, this, this);
@@ -57,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
 
         recyclerViewTopStories.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
+
+
 
         for (int i = 0; i < headlineList.length; i++) {
             TopStories topStories = new TopStories(i, headlineList[i], newsImage[i]);
@@ -87,20 +95,20 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
                 fragment.isVisible();
                 break;
             case 2:
-                Toast.makeText(this, "Codl Snap was clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Cold Snap was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story3Fragment();
                 break;
             case 3:
                 Toast.makeText(this, "Light 'n Tangy was clicked", Toast.LENGTH_SHORT).show();
-                fragment = new story1Fragment();
+                fragment = new story4Fragment();
                 break;
             case 4:
                 Toast.makeText(this, "Tourist Mecca was clicked", Toast.LENGTH_SHORT).show();
-                fragment = new story2Fragment();
+                fragment = new story5Fragment();
                 break;
             case 5:
                 Toast.makeText(this, "Nr Nets! was clicked", Toast.LENGTH_SHORT).show();
-                fragment = new story3Fragment();
+                fragment = new story6Fragment();
                 break;
 
             default:
