@@ -14,7 +14,7 @@ import com.example.mytask51_news_app.R;
 
 import java.util.List;
 
-public class newsRecyclerViewAdapter extends RecyclerView.Adapter<newsRecyclerViewAdapter.ViewHolder>
+public class newsRecyclerViewAdapter extends RecyclerView.Adapter<newsRecyclerViewAdapter.NewsViewHolder>
 {
     private List<News> newsList;
     private Context context;
@@ -28,13 +28,13 @@ public class newsRecyclerViewAdapter extends RecyclerView.Adapter<newsRecyclerVi
 
     @NonNull
     @Override
-    public newsRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(context).inflate(R.layout.news, parent, false);
-        return new ViewHolder(itemView, listener);
+        return new NewsViewHolder(itemView, listener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull newsRecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
         holder.newsImageView.setImageResource(newsList.get(position).getNewsImage());
         holder.subHeadingTextView.setText(newsList.get(position).getSubHeading());
         holder.newsContentTextView.setText(newsList.get(position).getContent());
@@ -45,13 +45,13 @@ public class newsRecyclerViewAdapter extends RecyclerView.Adapter<newsRecyclerVi
         return newsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class NewsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView subHeadingTextView;
         TextView newsContentTextView;
         ImageView newsImageView;
         public OnRowClickListener onRowClickListener;
 
-        public ViewHolder(@NonNull View itemView, OnRowClickListener onRowClickListener) {
+        public NewsViewHolder(@NonNull View itemView, OnRowClickListener onRowClickListener) {
             super(itemView);
             newsImageView = itemView.findViewById(R.id.imageViewNews);
             subHeadingTextView = itemView.findViewById(R.id.textViewSubHeading);

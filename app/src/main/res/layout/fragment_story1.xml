@@ -2,29 +2,34 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/headline1TextView"
-    android:layout_width="match_parent"
+    android:id="@+id/Story1Fragment"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".story1Fragment">
+    android:background="#FFFFFF"
+    tools:context="com.example.mytask51NewsApp.story1Fragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="327dp"
+        android:background="#FFFFFF">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="0dp"
+            android:layout_width="384dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="3dp"
             android:gravity="center_horizontal"
-            android:text="Headline Story One Crocs Go Wild"
+            android:text="Crocs Go Wild"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.38"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,21 +37,43 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:gravity="center"
-            android:text="Content Story 1 - Croc numbers out of control as CLP calls for a cull"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/textView"
+            android:text="Croc numbers out of control as CLP calls for a cull"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="415dp"
-            android:layout_height="407dp"
+            android:layout_width="364dp"
+            android:layout_height="225dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="3dp"
             android:src="@drawable/story_1_croc"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginEnd="160dp"
+            android:gravity="center"
+            android:onClick="backClick"
+            android:text="Back"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

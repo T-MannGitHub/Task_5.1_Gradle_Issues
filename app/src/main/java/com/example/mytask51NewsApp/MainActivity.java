@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainer;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
     com.example.mytask51NewsApp.newsRecyclerViewAdapter newsRecyclerViewAdapter;
     List<TopStories> topStoriesList = new ArrayList<>();
     List<News> newsList = new ArrayList<>();
+    FragmentContainerView fragmentContainer;
 
     String[] headlineList = {"Crocs Go WILD", "Footy's Back!", "Temperature Plummets", "Rush on Light 'n Tangy", "NT voted tourist mecca", "Croc nets banned to save community"};
     String[] contentList = {"Salty numbers out of control, as CLP leader Lia Finocchiaro calls for a cull.", "Footy is back in the NT with 4 games at TIO and Alice stadiums this season.", "Get out your socks and jumpers as temperature is forecast to dip below 23 degrees C.", "Thins announces discontinuation of cult favourite Light 'n Tangy, causing a rush to stores from punters hoping to secure supplies.", "Global surveys reveal Australia's Northern Territory at the top of the bucket list for international travellers over 55", "Controversial decision to ban installation of croc nets at NT beaches, in order to prevent tourist flood and overdevelopment of protected waterfront reserves in Darwin"};
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
         setContentView(R.layout.activity_main);
         recyclerViewTopStories = findViewById(R.id.recyclerViewTopStories);
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
+        fragmentContainer = findViewById(R.id.fragmentContainerView);
+
 
         topStoriesRecyclerViewAdapter = new topStoriesRecyclerViewAdapter(topStoriesList, this);
         newsRecyclerViewAdapter = new newsRecyclerViewAdapter(newsList, this, this);
@@ -63,44 +67,10 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
             News news = new News(j, subHeadingList[j], contentList[j], newsImage[j]);
             newsList.add(news);
         }
+
+
     }
 
-
-    public void selectFragment(View imageView) {
-        Fragment fragment;
-        try {
-            switch (imageView.getId()) {
-                case R.drawable.story_1_croc:
-                    fragment = new story1Fragment();
-                    break;
-                case R.drawable.story_2_footy:
-                    fragment = new story2Fragment();
-                    break;
-                case R.drawable.story_3_socks:
-                    fragment = new story3Fragment();
-                    break;
-                case R.drawable.story_4_chips:
-                    fragment = new story2Fragment();
-                    break;
-                case R.drawable.story_5_tourists:
-                    fragment = new story1Fragment();
-                    break;
-                case R.drawable.story_6_nets:
-                    fragment = new story2Fragment();
-                    break;
-
-                default:
-                    throw new IllegalStateException("Unexpected value.");
-            }
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragmentContainerView, fragment).commit();
-        }
-        catch (Exception e){
-            Toast.makeText(MainActivity.this, "Error in go to fragment section", Toast.LENGTH_SHORT).show();}
-
-    }
 
     @Override
     public void onItemCLick(int position) {
@@ -108,21 +78,28 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
        try {
         switch (position) {
             case 0:
+                Toast.makeText(this, "Croc Country was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story1Fragment();
                 break;
             case 1:
+                Toast.makeText(this, "Footy NT was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story2Fragment();
+                fragment.isVisible();
                 break;
             case 2:
+                Toast.makeText(this, "Codl Snap was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story3Fragment();
                 break;
             case 3:
+                Toast.makeText(this, "Light 'n Tangy was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story1Fragment();
                 break;
             case 4:
+                Toast.makeText(this, "Tourist Mecca was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story2Fragment();
                 break;
             case 5:
+                Toast.makeText(this, "Nr Nets! was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story3Fragment();
                 break;
 
@@ -132,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
         }
            FragmentManager fragmentManager = getSupportFragmentManager();
            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-           fragmentTransaction.replace(R.id.fragmentContainerView, fragment).commit();
+           fragmentTransaction.replace(R.id.fragmentContainerView, fragment).show(fragment).addToBackStack(null).commit();
        }
         catch (Exception e){
             Toast.makeText(MainActivity.this, "Error in go to fragment section", Toast.LENGTH_SHORT).show();}
