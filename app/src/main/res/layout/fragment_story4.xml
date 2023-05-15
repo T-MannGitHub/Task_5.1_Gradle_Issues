@@ -75,15 +75,16 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="400dp"
-            android:layout_height="192dp"
+            android:layout_width="409dp"
+            android:layout_height="189dp"
             android:layout_marginStart="13dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            tools:listitem="@layout/related_news_row" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

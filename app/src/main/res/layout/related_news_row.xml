@@ -7,23 +7,29 @@
     tools:context=".relatedNewsFragment">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="406dp"
         android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         app:cardCornerRadius="3dp">
 
         <ImageView
             android:id="@+id/relatedNewsImageView"
-            android:layout_width="198dp"
+            android:layout_width="wrap_content"
             android:layout_height="162dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_launcher_news_foreground" />
 
         <TextView
             android:id="@+id/relatedNewsTextView"
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_gravity="center_horizontal|top"
             android:gravity="center"
             android:text="@string/RNHead1"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>

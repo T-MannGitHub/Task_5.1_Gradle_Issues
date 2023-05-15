@@ -2,9 +2,12 @@ package com.example.mytask51NewsApp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -13,6 +16,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.mytask51_news_app.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +35,10 @@ public class story1Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private List<RelatedNews> relatedNewsList;
+    private String[] relatedNewsheadlineList;
+    private int[] relatedNewsImage;
+    private RecyclerView recyclerViewRelatedNews;
 
 
     public story1Fragment() {
@@ -70,7 +80,38 @@ public class story1Fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_story1, container, false);
     }
 
-/*    public void backClick(View view) {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        dataInitialise();
+
+        recyclerViewRelatedNews = view.findViewById(R.id.recyclerView);
+        recyclerViewRelatedNews.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerViewRelatedNews.setHasFixedSize(true);
+
+        RelatedNewsRecyclerViewAdapter relatedNewsRecyclerViewAdapter = new RelatedNewsRecyclerViewAdapter(relatedNewsList, getContext());
+        recyclerViewRelatedNews.setAdapter(relatedNewsRecyclerViewAdapter);
+        relatedNewsRecyclerViewAdapter.notifyDataSetChanged();
+
+
+
+    }
+
+    private void dataInitialise() {
+        relatedNewsList = new ArrayList<>();
+
+        relatedNewsheadlineList = new String[] {"DarwinCup", "Territory Day", "Humpty Doo"};
+        relatedNewsImage = new int[] {R.drawable.darwin_cup1, R.drawable.territory_day2, R.drawable.humpty_doo_hotel3};
+
+        for (int k = 0; k < relatedNewsheadlineList.length; k++) {
+            RelatedNews relatedNews = new RelatedNews(k, relatedNewsImage[k], relatedNewsheadlineList[k]);
+            relatedNewsList.add(relatedNews);
+        }
+
+    }
+
+    /*    public void backClick(View view) {
         Fragment fragment;
         fragment.getId(this).isHidden();
     }*/

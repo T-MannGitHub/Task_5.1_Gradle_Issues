@@ -35,8 +35,6 @@ public class RelatedNewsRecyclerViewAdapter extends RecyclerView.Adapter<Related
     public void onBindViewHolder(@NonNull RelatedNewsRecyclerViewAdapter.ViewHolder holder, int position) {
         holder.relatedNewsImageView.setImageResource(relatedNewsList.get(position).getImage());
         holder.relatedNewsTextView.setText(relatedNewsList.get(position).getHeadline());
-
-
     }
 
     @Override

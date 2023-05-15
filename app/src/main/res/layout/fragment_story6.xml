@@ -81,7 +81,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            tools:listitem="@layout/related_news_row"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

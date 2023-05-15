@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
 
     FragmentContainerView fragmentContainer;
 
+
     String[] headlineList = {"Crocs Go WILD", "Footy's Back!", "Temperature Plummets", "Rush on Light 'n Tangy", "NT voted tourist mecca", "Croc nets banned to save community"};
-    String[] contentList = {"Salty numbers out of control, as CLP leader Lia Finocchiaro calls for a cull.", "Footy is back in the NT with 4 games at TIO and Alice stadiums this season.", "Get out your socks and jumpers as temperature is forecast to dip below 23 degrees C.", "Thins announces discontinuation of cult favourite Light 'n Tangy, causing a rush to stores from punters hoping to secure supplies.", "Global surveys reveal Australia's Northern Territory at the top of the bucket list for international travellers over 55", "Controversial decision to ban installation of croc nets at NT beaches, in order to prevent tourist flood and overdevelopment of protected waterfront reserves in Darwin"};
+    String[] contentList = {"Salty numbers out of control, as CLP leader Lia Finocchiaro calls for a cull.", "Footy is back in the NT with 4 games at TIO and Alice stadiums this season.", "Get out your socks and crocs as temperature is forecast to dip below 23 degrees C.", "Thins announces discontinuation of cult favourite Light 'n Tangy, causing a rush to stores from punters hoping to secure supplies.", "Global surveys reveal Australia's Northern Territory at the top of the bucket list for international travellers over 55", "Controversial decision to ban installation of croc nets at NT beaches, in order to prevent tourist flood and overdevelopment of protected waterfront reserves in Darwin"};
 
     String[] subHeadingList = {"Croc Country", "Footy NT", "Cold Snap", "Light n' Tangy", "Tourism HotSpot", "No Nets!"};
 
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //replaceFragment (new story1Fragment());
+
         recyclerViewTopStories = findViewById(R.id.recyclerViewTopStories);
         recyclerViewNews = findViewById(R.id.recyclerViewNews);
 
@@ -75,9 +78,8 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
             News news = new News(j, subHeadingList[j], contentList[j], newsImage[j]);
             newsList.add(news);
         }
-
-
     }
+
 
 
     @Override
@@ -86,28 +88,28 @@ public class MainActivity extends AppCompatActivity implements newsRecyclerViewA
        try {
         switch (position) {
             case 0:
-                Toast.makeText(this, "Croc Country was clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Croc Country was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story1Fragment();
                 break;
             case 1:
-                Toast.makeText(this, "Footy NT was clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Footy NT was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story2Fragment();
                 fragment.isVisible();
                 break;
             case 2:
-                Toast.makeText(this, "Cold Snap was clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Cold Snap was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story3Fragment();
                 break;
             case 3:
-                Toast.makeText(this, "Light 'n Tangy was clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Light 'n Tangy was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story4Fragment();
                 break;
             case 4:
-                Toast.makeText(this, "Tourist Mecca was clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Tourist Mecca was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story5Fragment();
                 break;
             case 5:
-                Toast.makeText(this, "Nr Nets! was clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Nr Nets! was clicked", Toast.LENGTH_SHORT).show();
                 fragment = new story6Fragment();
                 break;
 
